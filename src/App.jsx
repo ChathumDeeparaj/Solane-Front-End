@@ -1,6 +1,8 @@
-import Navigation from "./components/Navigation";
+import Navigation from "./components/Navigation/Navigation";
 import HeroSection from "./components/HeroSection/HeroSection";
-// import SolarEnergyProduction from "./components/SolarEnergyProduction";
+// import { Button } from "./components/ui/button";
+import SolarEnergyProduction from "./components/SolarEnergyProduction/SolarEnergyProduction";
+
 
 function App() {
   return (
@@ -8,7 +10,7 @@ function App() {
       <Navigation />
       <main>
         <HeroSection />
-        {/* <SolarEnergyProduction /> */}
+        <SolarEnergyProduction />
       </main>
     </>
   );
