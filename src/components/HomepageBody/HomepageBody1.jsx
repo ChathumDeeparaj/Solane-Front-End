@@ -1,6 +1,6 @@
 const HomepageBody1 = () => {
     return (
-        <div className="flex min-h-screen flex-col lg:flex-row">
+        <div className="flex min-h-screen flex-col lg:flex-row px-12  py-6">
             {/* Left side - Image */}
             <div className="flex-1 p-2 sm:p-4">
                 <div className="h-64 overflow-hidden rounded-3xl sm:h-80 lg:h-full">
@@ -15,9 +15,9 @@ const HomepageBody1 = () => {
             </div>
 
             {/* Right side - Content */}
-            <div className="flex flex-1 flex-col justify-center p-6 sm:p-8 lg:p-12">
+            <div className="flex flex-1 flex-col justify-center p-6 sm:p-8 lg:p-12 px-12 py-6">
                 <div className="mx-auto max-w-lg lg:mx-0">
-                    <h2 className="mb-6 text-center text-3xl leading-tight font-bold text-gray-900 sm:mb-8 sm:text-4xl lg:text-left lg:text-5xl">
+                    <h2 className="mb-6 text-center text-3xl leading-tight font-bold text-gray-900 sm:mb-8 sm:text-3xl lg:text-left lg:text-5xl">
                         Your Solar Energy Generation
                     </h2>
                     
