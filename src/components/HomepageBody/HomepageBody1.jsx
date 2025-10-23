@@ -1,3 +1,5 @@
+const KwhValue = 42.5; 
+
 const HomepageBody1 = () => {
     return (
         <div className="flex min-h-screen flex-col lg:flex-row px-12  py-6">
@@ -23,7 +25,7 @@ const HomepageBody1 = () => {
                     
                     <p className="mb-8 text-center text-base leading-relaxed text-gray-700 sm:mb-12 sm:text-lg lg:text-left">
                         This month, your solar panels generated{' '}
-                        <span className="font-semibold text-blue-600">X kWh</span>
+                        <span className="font-semibold text-blue-600">{KwhValue}kWh</span>
                         {' '}of clean energy, helping you save on electricity bills and reduce your carbon footprint. Track your energy production trends and see how much power you contribute back to the grid.
                     </p>
 
