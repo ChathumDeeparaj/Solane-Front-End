@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const EnargyProductionCard = (props) => {
+const EnergyProductionCard = (props) => {
 
 
     // if (props.hasAnomaly) {
@@ -50,4 +50,4 @@ const [isSelected, setIsSelected] = useState(false);
         </button>
     );
 };
-export default EnargyProductionCard;
+export default EnergyProductionCard;

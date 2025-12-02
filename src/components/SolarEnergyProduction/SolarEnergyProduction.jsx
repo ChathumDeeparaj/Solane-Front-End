@@ -1,36 +1,58 @@
-import EnargyProductionCard from "@/EnargyProductionCard";
+import EnergyProductionCard from "@/EnergyProductionCard";
+import EnergyProductionCards from "@/EnergyProductionCards";
+import { useState } from "react";
+import Tab from "@/Tab";
 
 const SolarEnergyProduction = () => {
-    const enargyProductiondata = [
+    const energyProductiondata = [
         { day: "Mon", date: "Aug 18", production: 34.1 , hasAnomaly:false},
-        { day: "Tue", date: "Aug 19", production: 32.1 , hasAnomaly:true},
-        { day: "Wed", date: "Aug 20", production: 36.9 , hasAnomaly:false},
+        { day: "Tue", date: "Aug 19", production: 32.1 , hasAnomaly:false},
+        { day: "Wed", date: "Aug 20", production: 36.9 , hasAnomaly:true},
         { day: "Thu", date: "Aug 21", production: 30.9 , hasAnomaly:false},
         { day: "Fri", date: "Aug 22", production: 34.1 , hasAnomaly:false},
-        { day: "Sat", date: "Aug 23", production: 20.1 , hasAnomaly:true},
+        { day: "Sat", date: "Aug 23", production: 20.1 , hasAnomaly:false},
         { day: "Sun", date: "Aug 24", production: 35.1 , hasAnomaly:false},
     ];
+
+    const tabs = [
+        { label: "All", value: "all" },
+        { label: "Anomaly", value: "anomaly" },
+    ];
+
+    const handleTabClick = (value) => { 
+        setActiveTab(value);
+    };
+
+    const [selectedTab, setActiveTab] = useState(tabs[0].value);
+
+    const filteredEnergyProductionData = energyProductiondata.filter((el)=>{
+        if(selectedTab === "all"){
+            return true;} 
+            else {
+        return el.hasAnomaly;}
+    });
+
   return (
     <section className="px-12 py-6 font-[Inter] py-6 ">
-        <div classsname="mb-6">
+        <div>
             <h2 className="mb-2 text-2xl font-bold 	font-weigh-500 text-gray-900">Solar Energy Production</h2>
             <p className="text-gray-600">Daily enargy output for the past 7 days</p>
         </div>
-        <br></br>
-        <div className="grid grid-cols-7 gap-4">
-            {enargyProductiondata.map((el) => {
-                return(
-                    <EnargyProductionCard 
-                    key={el.date} 
-                    day={el.day} 
-                    date={el.date} 
-                    production={el.production}
-                    hasAnomaly={el.hasAnomaly}
-                    />
-                    
-                );
-            })} 
+        <div className="mt-4 flex gap-x-4 flex items-center">
+           {tabs.map((tab)=>{
+            return(
+                <Tab
+                 key={tab.value}
+                 tab={tab}
+                 selectedTab={selectedTab}
+                 onClick={handleTabClick}
+                 />
+                 );
+           })}
+
         </div>
+        <br></br>
+        < EnergyProductionCards energyProductionData={filteredEnergyProductionData} />
     </section>
 
   )
