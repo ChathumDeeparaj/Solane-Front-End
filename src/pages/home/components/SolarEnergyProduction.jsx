@@ -1,10 +1,15 @@
-import EnergyProductionCard from "@/pages/home/components/EnergyProductionCard";
-import EnergyProductionCards from "@/pages/home/components/EnergyProductionCards";
-import Tab from "@/pages/home/components/Tab";
+import { Button } from "@/components/ui/button";
+import { getEnergyGenerationRecordsBySolarUnit } from "@/lib/api/energy-generation-record";
 import { useSelector } from "react-redux";
+import EnergyProductionCards from "./EnergyProductionCards";
+import Tab from "./Tab";
+import { useEffect } from "react";
+import { useState } from "react";
+import { useGetEnergyGenerationRecordsBySolarUnitQuery } from "@/lib/redux/query";
+
 
 const SolarEnergyProduction = () => {
-    const energyProductiondata = [
+    const energyProductionData = [
         { day: "Mon", date: "Aug 18", production: 34.1 , hasAnomaly:false},
         { day: "Tue", date: "Aug 19", production: 32.1 , hasAnomaly:false},
         { day: "Wed", date: "Aug 20", production: 36.9 , hasAnomaly:true},
@@ -14,20 +19,26 @@ const SolarEnergyProduction = () => {
         { day: "Sun", date: "Aug 24", production: 35.1 , hasAnomaly:false},
     ];
 
-    const tabs = [
-        { label: "All", value: "all" },
-        { label: "Anomaly", value: "anomaly" },
+const tabs = [
+    { label: "All", value: "all" },
+    { label: "Anomaly", value: "anomaly" },
     ];
+    
+const selectedTab = useSelector((state) => state.ui.selectedHomeTab);
 
-
-    const selectedTab = useSelector((state) => state.ui.selectedHomeTab);
-
-    const filteredEnergyProductionData = energyProductiondata.filter((el)=>{
-        if(selectedTab === "all"){
-            return true;} 
-            else {
-        return el.hasAnomaly;}
-    });
+    
+const filteredEnergyProductionData = energyProductionData.filter((el) => {
+    if (selectedTab === "all") {
+        return true;
+    } else if (selectedTab === "anomaly") {
+        return el.hasAnomaly;
+    }
+});
+    
+const { data, isLoading, isError, error } =
+    useGetEnergyGenerationRecordsBySolarUnitQuery("6935d47ec45eb384a42ad64d");
+    
+      console.log(data, isLoading);
 
   return (
     <section className="px-12 py-6 font-[Inter] py-6 ">
@@ -40,7 +51,7 @@ const SolarEnergyProduction = () => {
           return <Tab key={tab.value} tab={tab} />;
         })}
         </div>
-        
+
         <br></br>
         < EnergyProductionCards energyProductionData={filteredEnergyProductionData} />
     </section>
