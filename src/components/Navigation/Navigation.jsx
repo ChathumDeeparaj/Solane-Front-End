@@ -1,9 +1,11 @@
+import { Link } from "react-router";
+
 const Navigation = () => {
     const user = "JD";
   
     return (
       <nav className={"px-12 py-6 flex justify-between items-center"}>
-        <div className={"flex items-center gap-3"}>
+        <Link to="/"className={"flex items-center gap-3"}>
           <div
             className={
               "w-10 h-10 rounded-full bg-lime-400 flex justify-center items-center"
@@ -27,10 +29,10 @@ const Navigation = () => {
             </svg>
           </div>
           <span className="font-[Inter] text-xl font-semibold">Aelora</span>
-        </div>
+        </Link>
   
         <div className={"flex items-center gap-12"}>
-          <div className={"flex items-center gap-3 px-3 py-2"}>
+          <Link to="/dashboard" className={"flex items-center gap-3 px-3 py-2"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -49,7 +51,7 @@ const Navigation = () => {
               <path d="M8 17v-3" />
             </svg>
             <span className="font-[Inter] text-sm font-medium">Dashboard</span>
-          </div>
+          </Link>
           <div className={"flex items-center gap-2"}>
             <div
               className={
