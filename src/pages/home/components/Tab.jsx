@@ -8,7 +8,8 @@ const Tab = (props) => {
     const selectedTab = useSelector((state) => state.ui.selectedHomeTab);
   
     return (
-      <Button
+      <Button 
+        className="bg-blue-600 hover:bg-blue-700 text-white"
         key={props.tab.value}
         variant={selectedTab === props.tab.value ? "default" : "outline"}
         onClick={(e) => dispatch(switchHomeTab(props.tab.value))}

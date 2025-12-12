@@ -27,7 +27,7 @@ const [isSelected, setIsSelected] = useState(false);
     };
 
     return (
-        <button className={`block cursor-pointer ${
+        <button  className={`block cursor-pointer ${
             isSelected ? "outline-2 outline-offset-2 outline-blue-600" : ""
         } relative border ${props.hasAnomaly ? "border-red-500" : "border-gray-300"} rounded-lg `}
             onClick = {handleClick}
