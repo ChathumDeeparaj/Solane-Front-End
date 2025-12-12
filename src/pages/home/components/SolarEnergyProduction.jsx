@@ -31,7 +31,7 @@ const SolarEnergyProduction = () => {
 
   const { data, isLoading, isError, error } =
     useGetEnergyGenerationRecordsBySolarUnitQuery({
-      id: "693bec71947468df796c97f8",
+      id: "693c6f0c87436c2f13aedf28",
       groupBy: "date",
     });
 
