@@ -4,19 +4,18 @@ import { switchHomeTab } from "@/lib/redux/features/uiSlice";
 import { useDispatch } from "react-redux";
 
 const Tab = (props) => {
-    const dispatch = useDispatch();
-    const selectedTab = useSelector((state) => state.ui.selectedHomeTab);
-  
-    return (
-      <Button 
-        className="bg-blue-600 hover:bg-blue-700 text-white"
-        key={props.tab.value}
-        variant={selectedTab === props.tab.value ? "default" : "outline"}
-        onClick={(e) => dispatch(switchHomeTab(props.tab.value))}
-      >
-        {props.tab.label}
-      </Button>
-    );
-  };
-  
-  export default Tab;
+  const dispatch = useDispatch();
+  const selectedTab = useSelector((state) => state.ui.selectedHomeTab);
+
+  return (
+    <Button
+      key={props.tab.value}
+      variant={selectedTab === props.tab.value ? "default" : "outline"}
+      onClick={(e) => dispatch(switchHomeTab(props.tab.value))}
+    >
+      {props.tab.label}
+    </Button>
+  );
+};
+
+export default Tab;

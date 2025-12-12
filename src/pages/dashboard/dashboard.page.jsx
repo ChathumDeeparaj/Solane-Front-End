@@ -1,14 +1,22 @@
-import { useGetEnergyGenerationRecordsBySolarUnitQuery } from "@/lib/redux/query";
+import { useGetSolarUnitForUserQuery } from "@/lib/redux/query";
 import DataCard from "./components/DataCard";
 import DataChart from "./components/DataChart";
 import { useUser } from "@clerk/clerk-react";
 
 const DashboardPage = () => {
-  const { user } = useUser();
-  console.log(user);
+  const { user, isLoaded } = useUser();
 
-  const solarUnitId = "68f4f2cef076449e2049b9c1";
+  const { data: solarUnit, isLoading: isLoadingSolarUnit, isError: isErrorSolarUnit, error: errorSolarUnit } = useGetSolarUnitForUserQuery();
 
+  if (isLoadingSolarUnit) {
+    return <div>Loading...</div>;
+  }
+
+  if (isErrorSolarUnit) {
+    return <div>Error: {errorSolarUnit.message}</div>;
+  }
+
+  console.log(solarUnit);
 
   return (
     <main className="mt-4">
@@ -18,16 +26,15 @@ const DashboardPage = () => {
       </p>
       <div className="mt-8">
         <DataCard
-          solarUnitId={solarUnitId}
+          solarUnitId={solarUnit._id}
           title="Last 7 Days Energy Production"
         />
       </div>
       <div className="mt-8">
-        <DataChart solarUnitId={solarUnitId} />
+        <DataChart solarUnitId={solarUnit._id} />
       </div>
     </main>
   );
 };
 
 export default DashboardPage;
-

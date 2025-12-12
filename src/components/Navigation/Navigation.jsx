@@ -2,12 +2,17 @@ import { Link } from "react-router";
 import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import { Button } from "@/components/ui/button";
 
-
 const Navigation = () => {
-   
-  
-    return (
-      <nav className={"px-12 py-6 flex justify-between items-center"}>
+  /**
+   * Only JS expressions are allowed in return statement => js code that evaluates to a value
+   * Function calls
+   * primitive value
+   * variables
+   * ternary statements
+   */
+
+  return (
+    <nav className={"px-12 py-6 flex justify-between items-center"}>
       <Link to="/" className={"flex items-center gap-3"}>
         <div
           className={
@@ -59,7 +64,7 @@ const Navigation = () => {
         </SignedIn>
         <div className={"flex items-center gap-2"}>
           <SignedOut>
-            <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white">
+            <Button asChild>
               <Link
                 to="/sign-in"
                 className={"flex items-center gap-3 px-3 py-2"}
@@ -67,7 +72,7 @@ const Navigation = () => {
                 Sign In
               </Link>
             </Button>
-            <Button asChild variant={"outline"} className="border-blue-600 text-blue-600 hover:bg-blue-50">
+            <Button asChild variant={"outline"}>
               <Link
                 to="/sign-up"
                 className={"flex items-center gap-3 px-3 py-2"}
