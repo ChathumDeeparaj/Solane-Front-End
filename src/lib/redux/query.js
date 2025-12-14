@@ -45,9 +45,22 @@ export const api = createApi({
     getAllUsers: build.query({
       query: () => `/users`,
     }),
+    getWeather: build.query({
+      query: ({ latitude, longitude }) => `/weather?latitude=${latitude}&longitude=${longitude}`,
+      keepUnusedDataFor: 3600, // Cache for 1 hour
+    }),
   }),
 });
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetAllUsersQuery, useGetEnergyGenerationRecordsBySolarUnitQuery, useGetSolarUnitForUserQuery, useGetSolarUnitsQuery, useGetSolarUnitByIdQuery, useCreateSolarUnitMutation, useEditSolarUnitMutation } = api;
+export const { 
+  useGetAllUsersQuery, 
+  useGetEnergyGenerationRecordsBySolarUnitQuery, 
+  useGetSolarUnitForUserQuery, 
+  useGetSolarUnitsQuery, 
+  useGetSolarUnitByIdQuery, 
+  useCreateSolarUnitMutation, 
+  useEditSolarUnitMutation,
+  useGetWeatherQuery 
+} = api;

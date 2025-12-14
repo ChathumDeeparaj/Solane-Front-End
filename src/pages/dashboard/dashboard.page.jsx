@@ -5,7 +5,6 @@ import WeatherConditionsCard from "./components/WeatherConditionsCard";
 import RealTimePowerCard from "./components/RealTimePowerCard";
 import { Zap } from 'lucide-react';
 
-
 const DashboardPage = () => {
   const { user, isLoaded } = useUser();
 
@@ -21,6 +20,10 @@ const DashboardPage = () => {
 
   console.log(solarUnit);
 
+  // Get coordinates from solar unit or use default (San Francisco)
+  const latitude = solarUnit?.location?.coordinates?.[1] || 37.7749;
+  const longitude = solarUnit?.location?.coordinates?.[0] || -122.4194;
+
   return (
     <main className="mt-4">
       <h1 className="text-4xl font-bold text-foreground">{user?.firstName}'s House</h1>
@@ -29,12 +32,12 @@ const DashboardPage = () => {
       </p>
       <div className="w-full p-2">
       <div className="grid grid-cols-1 justify-between  lg:grid-cols-2 gap-4 max-w-6xl">
-        <WeatherConditionsCard 
-          temperature={12}
-          windSpeed={8.5}
+        <WeatherConditionsCard
+          latitude={latitude}
+          longitude={longitude}
         />
-        
-        <RealTimePowerCard 
+
+        <RealTimePowerCard
           currentPower={332}
           percentage={36.9}
           avgWindSpeed={7.8}
