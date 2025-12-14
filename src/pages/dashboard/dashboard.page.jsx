@@ -5,6 +5,8 @@ import WeatherConditionsCard from "./components/WeatherConditionsCard";
 import RealTimePowerCard from "./components/RealTimePowerCard";
 import { Zap } from 'lucide-react';
 
+import CapacityFactorChart from "./components/CapacityFactorChart";
+
 const DashboardPage = () => {
   const { user, isLoaded } = useUser();
 
@@ -31,7 +33,7 @@ const DashboardPage = () => {
         Welcome back to your Solar Energy Production Dashboard
       </p>
       <div className="w-full p-2">
-      <div className="grid grid-cols-1 justify-between  lg:grid-cols-2 gap-4 max-w-6xl">
+      <div className="grid grid-cols-1 justify-between  lg:grid-cols-2 gap-5 max-w-6xl">
         <WeatherConditionsCard
           latitude={latitude}
           longitude={longitude}
@@ -47,8 +49,9 @@ const DashboardPage = () => {
         />
       </div>
     </div>
-      <div className="mt-8">
+      <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
         <DataChart solarUnitId={solarUnit._id} />
+        <CapacityFactorChart solarUnitId={solarUnit._id} />
       </div>
     </main>
   );

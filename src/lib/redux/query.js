@@ -49,6 +49,9 @@ export const api = createApi({
       query: ({ latitude, longitude }) => `/weather?latitude=${latitude}&longitude=${longitude}`,
       keepUnusedDataFor: 3600, // Cache for 1 hour
     }),
+    getCapacityFactor: build.query({
+      query: ({ id, days }) => `/capacity-factor/solar-unit/${id}?days=${days}`,
+    }),
   }),
 });
 
@@ -62,5 +65,6 @@ export const {
   useGetSolarUnitByIdQuery, 
   useCreateSolarUnitMutation, 
   useEditSolarUnitMutation,
-  useGetWeatherQuery 
+  useGetWeatherQuery,
+  useGetCapacityFactorQuery 
 } = api;
