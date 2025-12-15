@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-node_modules/
-dist/
-.env
-=======
 # Logs
 logs
 *.log
@@ -11,9 +6,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
-.env
-ngrok.yml
 
 node_modules
 dist
@@ -24,7 +16,6 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .idea
->>>>>>> dev
 .DS_Store
 ngrok.yml
 
