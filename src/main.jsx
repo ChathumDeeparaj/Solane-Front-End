@@ -20,6 +20,7 @@ import ProtectedLayout from "./layouts/protected.layout.jsx";
 import AdminPage from "./pages/admin/admin.page.jsx";
 import SolarUnitEditPage from "./pages/admin/solar-unit-edit.page.jsx";
 import SolarUnitCreatePage from "./pages/admin/solar-unit-create.page.jsx";
+import AdminInvoicesPage from "./pages/admin/invoices.page.jsx";
 import AnomaliesPage from "./pages/anomalies/anomalies.page.jsx";
 import InvoicesPage from "./pages/invoices/invoices.page.jsx";
 import PaymentPage from "./pages/invoices/payment.page.jsx";
@@ -63,6 +64,7 @@ createRoot(document.getElementById("root")).render(
                     <Route path="/admin/solar-units/:id" element={<SolarUnitDetailPage />} />
                     <Route path="/admin/solar-units/:id/edit" element={<SolarUnitEditPage />} />
                     <Route path="/admin/solar-units/create" element={<SolarUnitCreatePage />} />
+                    <Route path="/admin/invoices" element={<AdminInvoicesPage />} />
                     <Route path="/admin/settings" element={<SettingsPage />} />
                   </Route>
                 </Route>

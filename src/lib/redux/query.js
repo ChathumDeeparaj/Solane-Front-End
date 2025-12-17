@@ -70,6 +70,9 @@ export const api = createApi({
     getSessionStatus: build.query({
       query: (sessionId) => `/payments/session-status?session_id=${sessionId}`,
     }),
+    getAllInvoices: build.query({
+      query: (status) => `/admin/invoices${status ? `?status=${status}` : ''}`,
+    }),
   }),
 });
 
@@ -88,5 +91,6 @@ export const {
   useGetInvoicesQuery,
   useGetInvoiceByIdQuery,
   useCreatePaymentSessionMutation,
-  useGetSessionStatusQuery
+  useGetSessionStatusQuery,
+  useGetAllInvoicesQuery
 } = api;
