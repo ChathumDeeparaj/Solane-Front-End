@@ -73,6 +73,22 @@ export const api = createApi({
     getAllInvoices: build.query({
       query: (status) => `/admin/invoices${status ? `?status=${status}` : ''}`,
     }),
+    getAnomalies: build.query({
+      query: ({ solarUnitId } = {}) => `/anomalies${solarUnitId ? `?solarUnitId=${solarUnitId}` : ''}`,
+    }),
+    updateAnomalyStatus: build.mutation({
+      query: ({ id, resolutionStatus }) => ({
+        url: `/anomalies/${id}`,
+        method: "PATCH",
+        body: { resolutionStatus },
+      }),
+    }),
+    triggerAnomalyDetection: build.mutation({
+      query: () => ({
+        url: `/anomalies/trigger-detection`,
+        method: "POST",
+      }),
+    }),
   }),
 });
 
@@ -92,5 +108,8 @@ export const {
   useGetInvoiceByIdQuery,
   useCreatePaymentSessionMutation,
   useGetSessionStatusQuery,
-  useGetAllInvoicesQuery
+  useGetAllInvoicesQuery,
+  useGetAnomaliesQuery,
+  useUpdateAnomalyStatusMutation,
+  useTriggerAnomalyDetectionMutation,
 } = api;

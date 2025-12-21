@@ -1,15 +1,15 @@
 const HomepageBody3 = () => {
-    return(
+    return (
         <div className="flex min-h-screen flex-col bg-white lg:flex-row">
             {/* Left side - Image */}
             <div className="relative m-2 min-h-[400px] flex-1 lg:min-h-auto">
                 <div className="relative h-full overflow-hidden rounded-3xl">
-                    <img 
-                        alt="Solar panel installation on a house roof" 
-                        width="800" 
-                        height="600" 
-                        className="h-full w-full object-cover" 
-                        src="/src/assets/wind-turbine-2-i2cMFNlb.png"
+                    <img
+                        alt="Solar panel installation on a house roof"
+                        width="800"
+                        height="600"
+                        className="h-full w-full object-cover"
+                        src="/src/pages/home/components/HomepageBody/wind-turbine-2-i2cMFNlb.png"
                     />
                     <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8">
                         <div className="flex flex-col items-center rounded-2xl bg-blue-500 p-4 text-white sm:p-6">
@@ -21,7 +21,7 @@ const HomepageBody3 = () => {
                     </div>
                 </div>
             </div>
-            
+
             {/* Right side content */}
             <div className="m-2 flex flex-1 flex-col justify-center rounded-3xl bg-gradient-to-br from-blue-400 to-blue-600 p-8 text-white sm:p-12 lg:p-16">
                 <div className="max-w-none lg:max-w-2xl">
@@ -29,7 +29,7 @@ const HomepageBody3 = () => {
                     <div className="mb-6 inline-flex">
                         <div className="inline-flex items-center gap-2 rounded-lg bg-lime-400 px-4 py-2 text-black">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-zap" aria-hidden="true">
-                                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>
+                                <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
                             </svg>
                             <span className="text-base font-semibold">Solution</span>
                         </div>
@@ -45,7 +45,7 @@ const HomepageBody3 = () => {
                         {/* Feature 1 */}
                         <div className="flex items-center gap-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-5 w-5 flex-shrink-0 text-lime-400" aria-hidden="true">
-                                <path d="m9 18 6-6-6-6"/>
+                                <path d="m9 18 6-6-6-6" />
                             </svg>
                             <span className="text-lg text-white">Real-time energy tracking</span>
                         </div>
@@ -53,7 +53,7 @@ const HomepageBody3 = () => {
                         {/* Feature 2 */}
                         <div className="flex items-center gap-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-5 w-5 flex-shrink-0 text-lime-400" aria-hidden="true">
-                                <path d="m9 18 6-6-6-6"/>
+                                <path d="m9 18 6-6-6-6" />
                             </svg>
                             <span className="text-lg text-white">Anomaly alerts</span>
                         </div>
@@ -61,7 +61,7 @@ const HomepageBody3 = () => {
                         {/* Feature 3 */}
                         <div className="flex items-center gap-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-5 w-5 flex-shrink-0 text-lime-400" aria-hidden="true">
-                                <path d="m9 18 6-6-6-6"/>
+                                <path d="m9 18 6-6-6-6" />
                             </svg>
                             <span className="text-lg text-white">Historical performance reports</span>
                         </div>
@@ -69,7 +69,7 @@ const HomepageBody3 = () => {
                         {/* Feature 4 */}
                         <div className="flex items-center gap-3">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-5 w-5 flex-shrink-0 text-lime-400" aria-hidden="true">
-                                <path d="m9 18 6-6-6-6"/>
+                                <path d="m9 18 6-6-6-6" />
                             </svg>
                             <span className="text-lg text-white">Remote diagnostics & support</span>
                         </div>
