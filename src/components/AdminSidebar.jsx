@@ -1,4 +1,4 @@
-import { Settings, Zap } from "lucide-react";
+import { Settings, Zap, FileText } from "lucide-react";
 import { Link, useLocation } from "react-router";
 import {
   Sidebar,
@@ -22,6 +22,11 @@ const items = [
     title: "Settings",
     url: "/admin/settings",
     icon: <Settings className="w-8 h-8" size={32} />,
+  },
+  {
+    title: "All Invoices",
+    url: "/admin/invoices",
+    icon: <FileText className="w-8 h-8" size={32} />,
   },
 ];
 

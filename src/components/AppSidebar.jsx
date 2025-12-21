@@ -1,4 +1,4 @@
-import { ChartLine, LayoutDashboard, TriangleAlert } from "lucide-react";
+import { ChartLine, LayoutDashboard, TriangleAlert, FileText } from "lucide-react";
 import { Link } from "react-router";
 import {
   Sidebar,
@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sidebar";
 import { useLocation } from "react-router";
 import { cn } from "@/lib/utils";
+import SolaneLogo from "./Navigation/Solane-Logo.png";
 
 // Menu items.
 const items = [
@@ -30,6 +31,11 @@ const items = [
     url: "/dashboard/analytics",
     icon: <ChartLine className="w-8 h-8" size={32} />,
   },
+  {
+    title: "Invoices",
+    url: "/dashboard/invoices",
+    icon: <FileText className="w-8 h-8" size={32} />,
+  },
 ];
 
 const SideBarTab = ({ item }) => {
@@ -38,7 +44,11 @@ const SideBarTab = ({ item }) => {
 
   return (
     <SidebarMenuItem key={item.url}>
-      <SidebarMenuButton asChild isActive={isActive}>
+      <SidebarMenuButton
+        asChild
+        isActive={isActive}
+        className="hover:bg-blue-100 hover:text-blue-700 data-[active=true]:bg-blue-600 data-[active=true]:text-white"
+      >
         <Link
           to={item.url}
         >
@@ -55,8 +65,21 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className="text-3xl font-bold text-foreground">
-            <Link to="/">Aelora</Link>
+          <SidebarGroupLabel className="h-auto py-4">
+            <Link to="/" className="flex items-center gap-3">
+              <div
+                className={
+                  "w-10 h-10 rounded-full  flex justify-center items-center overflow-hidden shrink-0"
+                }
+              >
+                <img
+                  src={SolaneLogo}
+                  alt="Solane Logo"
+                  className="w-full h-full object-cover scale-300"
+                />
+              </div>
+              <span className="text-3xl font-bold text-foreground">Solane</span>
+            </Link>
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu className="mt-4 text">

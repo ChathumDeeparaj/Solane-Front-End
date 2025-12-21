@@ -19,15 +19,15 @@ const HomepageBody2 = () => {
                                         stroke-linecap="round"
                                         stroke-linejoin="round"
                                         class="lucide lucide-triangle-alert-icon lucide-triangle-alert">
-                                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/>
-                                        <path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+                                        <path d="M12 9v4" /><path d="M12 17h.01" /></svg>
                                 </div>
                                 <span className="text-sm font-medium sm:text-base">Problems</span>
                             </div>
                         </div>
                     </div>
                     <p className="mb-8 text-2xl leading-tight font-bold text-gray-900 sm:mb-12 sm:text-3xl lg:text-4xl">
-                        Home solar systems can face reduced efficiency and 
+                        Home solar systems can face reduced efficiency and
                         missed savings due to panel shading, dirt, unexpected
                         drops in output, or inverter issues. Stay ahead with instant
                         anomaly alerts.
@@ -52,22 +52,21 @@ const HomepageBody2 = () => {
                     </div>
 
                 </div>
-                 {/* Left side - Image */}
-            <div className="flex-1 p-2 sm:p-4">
-                <div className="h-20 overflow-hidden rounded-3xl sm:h-50 lg:h-190 ">
-                    <img 
-                        alt="Solar panel installation on a house roof" 
-                        width="800" 
-                        height="600" 
-                        className="h-full w-full object-cover" 
-                        src="/src/assets/wind-turbine-3-BGYqnrhL.png"
-                    />
+                {/* Left side - Image */}
+                <div className="flex-1 p-2 sm:p-4">
+                    <div className="h-20 overflow-hidden rounded-3xl sm:h-50 lg:h-190 ">
+                        <img
+                            alt="Solar panel installation on a house roof"
+                            width="800"
+                            height="600"
+                            className="h-full w-full object-cover"
+                            src="/src/pages/home/components/HomepageBody/wind-turbine-3-BGYqnrhL.png"
+                        />
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     );
 };
 
 export default HomepageBody2;
-            

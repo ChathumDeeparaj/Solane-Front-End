@@ -1,5 +1,6 @@
 import { useGetSolarUnitForUserQuery } from "@/lib/redux/query";
 import DataCard from "./components/DataCard";
+import AnomalyList from "./components/AnomalyList";
 import { useUser } from "@clerk/clerk-react";
 
 const AnomaliesPage = () => {
@@ -23,8 +24,9 @@ const AnomaliesPage = () => {
       <p className="text-gray-600 mt-2">
         Monitor anomalies in your solar unit
       </p>
-      <div className="mt-8">
+      <div className="mt-8 space-y-8">
         <DataCard solarUnitId={solarUnit._id} />
+        <AnomalyList solarUnitId={solarUnit._id} />
       </div>
     </main>
   );
