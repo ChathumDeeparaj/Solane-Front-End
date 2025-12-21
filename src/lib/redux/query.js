@@ -89,6 +89,9 @@ export const api = createApi({
         method: "POST",
       }),
     }),
+    getSolarStats: build.query({
+      query: (solarUnitId) => `/energy-generation-records/stats/${solarUnitId}`,
+    }),
   }),
 });
 
@@ -112,4 +115,5 @@ export const {
   useGetAnomaliesQuery,
   useUpdateAnomalyStatusMutation,
   useTriggerAnomalyDetectionMutation,
+  useGetSolarStatsQuery,
 } = api;

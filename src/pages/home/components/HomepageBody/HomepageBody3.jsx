@@ -16,7 +16,7 @@ const HomepageBody3 = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-triangle mb-2 h-6 w-6 fill-current sm:h-8 sm:w-8" aria-hidden="true">
                                 <path d="M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
                             </svg>
-                            <span className="text-lg font-bold sm:text-xl">Aelora</span>
+                            <span className="text-lg font-bold sm:text-xl">Solane</span>
                         </div>
                     </div>
                 </div>

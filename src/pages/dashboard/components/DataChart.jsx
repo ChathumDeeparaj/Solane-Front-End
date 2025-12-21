@@ -41,7 +41,7 @@ const DataChart = ({ solarUnitId }) => {
     .map((el) => {
       return {
         date: format(toDate(el._id.date), "MMM d"),
-        energy: el.totalEnergy,
+        energy: el.totalEnergy / 500,
       };
     });
 
@@ -98,7 +98,7 @@ const DataChart = ({ solarUnitId }) => {
               tickLine={true}
               axisLine={true}
               tickMargin={8}
-              tickCount={10}
+              tickCount={5}
               label={{ value: "kWh", angle: -90, position: "insideLeft" }}
             />
             <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
