@@ -1,3 +1,6 @@
+import WindTurbine2 from "./wind-turbine-2-i2cMFNlb.png";
+import SolarConstruction from "./solar-construction-DLKEjVnj.webp";
+
 const KwhValue = 42.5;
 
 const HomepageBody1 = () => {
@@ -11,7 +14,7 @@ const HomepageBody1 = () => {
                         width="800"
                         height="600"
                         className="h-full w-full object-cover"
-                        src="/src/pages/home/components/HomepageBody/wind-turbine-2-i2cMFNlb.png"
+                        src={WindTurbine2}
                     />
                 </div>
             </div>
@@ -29,13 +32,14 @@ const HomepageBody1 = () => {
                         {' '}of clean energy, helping you save on electricity bills and reduce your carbon footprint. Track your energy production trends and see how much power you contribute back to the grid.
                     </p>
 
+
                     <div className="mx-auto h-40 w-56 overflow-hidden rounded-2xl sm:h-48 sm:w-64 lg:mx-0">
                         <img
                             alt="Wind turbine maintenance workers in safety gear"
                             width="256"
                             height="192"
                             className="h-full w-full object-cover"
-                            src="/src/pages/home/components/HomepageBody/solar-construction-DLKEjVnj.webp"
+                            src={SolarConstruction}
                         />
                     </div>
                 </div>

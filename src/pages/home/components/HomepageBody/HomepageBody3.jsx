@@ -1,3 +1,5 @@
+import WindTurbine2 from "./wind-turbine-2-i2cMFNlb.png";
+
 const HomepageBody3 = () => {
     return (
         <div className="flex min-h-screen flex-col bg-white lg:flex-row">
@@ -9,7 +11,7 @@ const HomepageBody3 = () => {
                         width="800"
                         height="600"
                         className="h-full w-full object-cover"
-                        src="/src/pages/home/components/HomepageBody/wind-turbine-2-i2cMFNlb.png"
+                        src={WindTurbine2}
                     />
                     <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8">
                         <div className="flex flex-col items-center rounded-2xl bg-blue-500 p-4 text-white sm:p-6">

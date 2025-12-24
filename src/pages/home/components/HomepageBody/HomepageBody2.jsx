@@ -1,5 +1,6 @@
 
 // import { createLucideIcon } from "lucide-react";
+import WindTurbine3 from "./wind-turbine-3-BGYqnrhL.png";
 
 const HomepageBody2 = () => {
     return (
@@ -60,7 +61,7 @@ const HomepageBody2 = () => {
                             width="800"
                             height="600"
                             className="h-full w-full object-cover"
-                            src="/src/pages/home/components/HomepageBody/wind-turbine-3-BGYqnrhL.png"
+                            src={WindTurbine3}
                         />
                     </div>
                 </div>
