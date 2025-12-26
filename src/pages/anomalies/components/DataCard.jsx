@@ -151,17 +151,17 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
       </div>
 
       {/* Anomaly Statistics - shows detection results */}
-      <div className="mb-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+      <div className="mb-4 p-3 bg-brand-dark/5 rounded-lg border border-brand-dark/10">
         <div className="flex items-center justify-between gap-4">
           <div className="flex-1">
-            <p className="text-sm text-blue-900">
+            <p className="text-sm text-brand-dark">
               <span className="font-semibold">Window Average:</span> {stats.windowAverage} kWh
               {' | '}
               <span className="font-semibold">Range:</span> {stats.minEnergy} - {stats.maxEnergy} kWh
             </p>
           </div>
           <div className="flex-1">
-            <p className="text-sm text-blue-900">
+            <p className="text-sm text-brand-dark">
               <span className="font-semibold">Anomalies:</span>{' '}
               <span className={stats.anomalyCount > 0 ? 'text-red-600 font-bold' : 'text-green-600'}>
                 {stats.anomalyCount}

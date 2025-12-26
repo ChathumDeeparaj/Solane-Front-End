@@ -47,7 +47,7 @@ const SideBarTab = ({ item }) => {
       <SidebarMenuButton
         asChild
         isActive={isActive}
-        className="hover:bg-blue-100 hover:text-blue-700 data-[active=true]:bg-blue-600 data-[active=true]:text-white"
+        className="hover:bg-brand-light/20 hover:text-brand-dark data-[active=true]:bg-brand-dark data-[active=true]:text-white"
       >
         <Link
           to={item.url}

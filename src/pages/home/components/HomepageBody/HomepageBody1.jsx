@@ -22,13 +22,13 @@ const HomepageBody1 = () => {
             {/* Right side - Content */}
             <div className="flex flex-1 flex-col justify-center p-6 sm:p-8 lg:p-12 px-12 py-6">
                 <div className="mx-auto max-w-lg lg:mx-0">
-                    <h2 className="mb-6 text-center text-3xl leading-tight font-bold text-gray-900 sm:mb-8 sm:text-3xl lg:text-left lg:text-5xl">
+                    <h2 className="mb-6 text-center text-3xl leading-tight font-bold text-brand-dark sm:mb-8 sm:text-3xl lg:text-left lg:text-5xl">
                         Your Solar Energy Generation
                     </h2>
 
                     <p className="mb-8 text-center text-base leading-relaxed text-gray-700 sm:mb-12 sm:text-lg lg:text-left">
                         This month, your solar panels generated{' '}
-                        <span className="font-semibold text-blue-600">{KwhValue}kWh</span>
+                        <span className="font-semibold text-brand-dark">{KwhValue}kWh</span>
                         {' '}of clean energy, helping you save on electricity bills and reduce your carbon footprint. Track your energy production trends and see how much power you contribute back to the grid.
                     </p>
 

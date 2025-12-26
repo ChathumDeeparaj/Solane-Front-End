@@ -25,7 +25,7 @@ export default function RealTimePowerCard({ solarUnitId }) {
 
   if (isLoading || !stats) {
     return (
-      <Card className="flex flex-col h-full items-center justify-center p-6 bg-blue-500 text-white border-none shadow-lg">
+      <Card className="flex flex-col h-full items-center justify-center p-6 bg-brand-dark text-white border-none shadow-lg">
         <p className="animate-pulse">
           Loading Power Data...
         </p>
@@ -49,7 +49,7 @@ export default function RealTimePowerCard({ solarUnitId }) {
   };
 
   return (
-    <Card className="flex flex-col h-full bg-blue-500 text-white border-none shadow-lg">
+    <Card className="flex flex-col h-full bg-brand-dark text-white border-none shadow-lg">
       <CardHeader className="items-start pb-0">
         <CardTitle className="flex items-center gap-2 text-2xl font-bold">
           <Zap className="h-6 w-6 fill-white text-white" /> Real-Time Power
@@ -110,15 +110,15 @@ export default function RealTimePowerCard({ solarUnitId }) {
           </ChartContainer>
         </div>
       </CardContent>
-      <CardFooter className="flex-col gap-4 text-sm pt-4 bg-blue-600/50 backdrop-blur-sm mt-auto rounded-b-xl">
-        <div className="flex w-full items-center justify-between border-b border-blue-400/30 pb-2">
-          <span className="text-blue-100 flex items-center gap-2">
+      <CardFooter className="flex flex-col gap-4 text-sm pt-4 bg-brand-dark/90 backdrop-blur-sm mt-auto rounded-b-xl">
+        <div className="flex w-full justify-between items-center bg-white/10 p-2 rounded-lg">
+          <span className="text-white/90 flex items-center gap-2">
             <BarChart2 className="h-4 w-4" /> Avg Power (All time)
           </span>
           <span className="font-bold text-lg">{stats.avgPower} kW</span>
         </div>
         <div className="flex w-full items-center justify-between border-b border-blue-400/30 pb-2">
-          <span className="text-blue-100 flex items-center gap-2 text-wrap">
+          <span className="text-white/90 flex items-center gap-2 text-wrap">
             <TrendingUp className="h-4 w-4" /> Peak Power
           </span>
           <span className="font-bold text-lg">{stats.peakPower} kW</span>

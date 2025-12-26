@@ -10,7 +10,7 @@ import { Loader2, AlertTriangle, CheckCircle, Info, RefreshCw } from "lucide-rea
 const COLORS = {
     CRITICAL: "#ef4444", // red-500
     WARNING: "#f97316", // orange-500
-    INFO: "#3b82f6",    // blue-500
+    INFO: "#023D54",    // Brand Dark
 };
 
 const AnomalyList = ({ solarUnitId }) => {
@@ -30,7 +30,7 @@ const AnomalyList = ({ solarUnitId }) => {
         setTimeout(refetch, 1000); // Wait a bit for async job
     };
 
-    if (isLoading) return <div className="flex justify-center p-8"><Loader2 className="animate-spin h-8 w-8 text-blue-500" /></div>;
+    if (isLoading) return <div className="flex justify-center p-8"><Loader2 className="animate-spin h-8 w-8 text-brand-dark" /></div>;
 
     const stats = anomalies ? [
         { label: "Critical", value: anomalies.filter(a => a.severity === "CRITICAL").length, fill: COLORS.CRITICAL },
@@ -76,7 +76,7 @@ const AnomalyList = ({ solarUnitId }) => {
                         <button
                             onClick={handleTrigger}
                             disabled={isTriggering}
-                            className="flex items-center gap-2 px-3 py-1.5 bg-blue-100 text-blue-700 rounded-md hover:bg-blue-200 disabled:opacity-50 text-sm font-medium transition-colors"
+                            className="flex items-center gap-2 px-3 py-1.5 bg-brand-light/20 text-brand-dark rounded-md hover:bg-brand-light/30 disabled:opacity-50 text-sm font-medium transition-colors"
                         >
                             <RefreshCw className={`h-4 w-4 ${isTriggering ? 'animate-spin' : ''}`} />
                             {isTriggering ? 'Scanning...' : 'Scan Now'}
@@ -101,7 +101,7 @@ const AnomalyList = ({ solarUnitId }) => {
                                                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border
                             ${anomaly.severity === 'CRITICAL' ? 'bg-red-100 text-red-800 border-red-200' :
                                                         anomaly.severity === 'WARNING' ? 'bg-orange-100 text-orange-800 border-orange-200' :
-                                                            'bg-blue-100 text-blue-800 border-blue-200'}`}>
+                                                            'bg-brand-light/20 text-brand-dark border-brand-dark/10'}`}>
                                                     {anomaly.severity}
                                                 </span>
                                             </TableCell>
@@ -122,7 +122,7 @@ const AnomalyList = ({ solarUnitId }) => {
                                                     <div className="flex gap-2">
                                                         <button
                                                             onClick={() => handleStatusUpdate(anomaly._id, 'ACKNOWLEDGED')}
-                                                            className="p-1.5 text-blue-600 hover:bg-blue-50 rounded" title="Acknowledge">
+                                                            className="p-1.5 text-brand-dark hover:bg-brand-dark/5 rounded" title="Acknowledge">
                                                             <Info className="h-4 w-4" />
                                                         </button>
                                                         <button

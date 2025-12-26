@@ -107,7 +107,7 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
             <select
               value={detectionMethod}
               onChange={(e) => setDetectionMethod(e.target.value)}
-              className="px-3 py-1 border border-gray-300 rounded-md text-sm bg-white hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-3 py-1 border border-gray-300 rounded-md text-sm bg-white hover:border-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-dark"
             >
               <option value="windowAverage">Window Average (7-day)</option>
               <option value="absolute">Absolute Threshold</option>
@@ -151,17 +151,18 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
       </div>
 
       {/* Anomaly Statistics - shows detection results */}
-      <div className="mb-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex-1">
-            <p className="text-sm text-blue-900">
+      <div className="mb-4 p-3 bg-brand-dark/5 rounded-lg border border-brand-dark/10">
+        <div className="flex justify-between items-center mb-2">
+          <div className="flex items-center gap-2">
+            <TriangleAlert className="w-4 h-4 text-brand-dark" />
+            <p className="text-sm text-brand-dark">
               <span className="font-semibold">Window Average:</span> {stats.windowAverage} kWh
               {' | '}
               <span className="font-semibold">Range:</span> {stats.minEnergy} - {stats.maxEnergy} kWh
             </p>
           </div>
           <div className="flex-1">
-            <p className="text-sm text-blue-900">
+            <p className="text-sm text-brand-dark">
               <span className="font-semibold">Anomalies:</span>{' '}
               <span className={stats.anomalyCount > 0 ? 'text-red-600 font-bold' : 'text-green-600'}>
                 {stats.anomalyCount}

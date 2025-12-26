@@ -27,7 +27,7 @@ const HomepageBody2 = () => {
                             </div>
                         </div>
                     </div>
-                    <p className="mb-8 text-2xl leading-tight font-bold text-gray-900 sm:mb-12 sm:text-3xl lg:text-4xl">
+                    <p className="mb-8 text-2xl leading-tight font-bold text-brand-dark sm:mb-12 sm:text-3xl lg:text-4xl">
                         Home solar systems can face reduced efficiency and
                         missed savings due to panel shading, dirt, unexpected
                         drops in output, or inverter issues. Stay ahead with instant

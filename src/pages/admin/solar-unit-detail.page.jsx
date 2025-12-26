@@ -11,7 +11,7 @@ export default function SolarUnitDetailPage() {
   const navigate = useNavigate();
 
   const { data: solarUnit, isLoading: isLoadingSolarUnit, isError: isErrorSolarUnit, error: errorSolarUnit } = useGetSolarUnitByIdQuery(id);
-  
+
   if (isLoadingSolarUnit) {
     return <div>Loading...</div>;
   }
@@ -58,11 +58,10 @@ export default function SolarUnitDetailPage() {
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-foreground">Status</h2>
               <div
-                className={`px-4 py-2 rounded-full text-sm font-medium ${
-                  solarUnit.status === "ACTIVE"
-                    ? "bg-green-100 text-green-800"
-                    : "bg-gray-100 text-gray-800"
-                }`}
+                className={`px-4 py-2 rounded-full text-sm font-medium ${solarUnit.status === "ACTIVE"
+                  ? "bg-brand-light/20 text-brand-dark"
+                  : "bg-gray-100 text-gray-800"
+                  }`}
               >
                 {solarUnit.status}
               </div>
@@ -85,7 +84,7 @@ export default function SolarUnitDetailPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <Gauge className="w-5 h-5 text-blue-500" />
+                  <Gauge className="w-5 h-5 text-brand-dark" />
                   <p className="text-sm text-muted-foreground">Capacity</p>
                 </div>
                 <p className="text-2xl font-bold text-foreground">
@@ -95,7 +94,7 @@ export default function SolarUnitDetailPage() {
 
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <Zap className="w-5 h-5 text-yellow-500" />
+                  <Zap className="w-5 h-5 text-brand-accent" />
                   <p className="text-sm text-muted-foreground">Serial Number</p>
                 </div>
                 <p className="text-2xl font-bold text-foreground font-mono">
@@ -115,7 +114,7 @@ export default function SolarUnitDetailPage() {
             <div className="space-y-4">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <Calendar className="w-5 h-5 text-purple-500" />
+                  <Calendar className="w-5 h-5 text-brand-secondary" />
                   <p className="text-sm text-muted-foreground">
                     Installation Date
                   </p>

@@ -39,11 +39,9 @@ const EnergyProductionCard = (props) => {
 
   return (
     <button
-      className={`block cursor-pointer ${
-        isSelected ? "outline-2 outline-offset-2 outline-blue-600" : ""
-      } relative border ${
-        props.hasAnomaly ? "border-red-500" : "border-gray-300"
-      } rounded-lg transition-all hover:shadow-md`}
+      className={`block cursor-pointer ${isSelected ? "outline-2 outline-offset-2 outline-brand-dark" : ""
+        } relative border ${props.hasAnomaly ? "border-red-500" : "border-gray-300"
+        } rounded-lg transition-all hover:shadow-md`}
       onClick={handleClick}
       title={props.hasAnomaly ? props.anomalyReason : "Normal operation"}
     >
@@ -60,9 +58,8 @@ const EnergyProductionCard = (props) => {
       </div>
       <div className="p-6 pt-2 flex flex-col items-center">
         <span
-          className={`block mb-1 text-3xl font-bold ${
-            props.hasAnomaly ? "text-red-600" : "text-blue-600"
-          }`}
+          className={`block mb-1 text-3xl font-bold ${props.hasAnomaly ? "text-red-600" : "text-brand-dark"
+            }`}
         >
           {props.production}
         </span>

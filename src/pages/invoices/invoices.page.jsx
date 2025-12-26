@@ -55,8 +55,8 @@ export default function InvoicesPage() {
                                                 : "destructive"
                                     }
                                     className={
-                                        invoice.paymentStatus === "PAID" ? "bg-green-500" :
-                                            invoice.paymentStatus === "PENDING" ? "bg-yellow-500" : "bg-red-500"
+                                        invoice.paymentStatus === "PAID" ? "bg-brand-light text-brand-dark" :
+                                            invoice.paymentStatus === "PENDING" ? "bg-brand-accent text-brand-dark" : "bg-red-500 text-white"
                                     }
                                 >
                                     {invoice.paymentStatus}
