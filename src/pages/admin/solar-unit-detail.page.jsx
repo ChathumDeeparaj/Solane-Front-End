@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, Zap, Calendar, Gauge, Activity } from "lucide-react";
 import { format } from "date-fns";
-import { useGetSolarUnitByIdQuery } from "@/lib/redux/query";
+import { useDeleteSolarUnitMutation, useGetSolarUnitByIdQuery } from "@/lib/redux/query";
 
 export default function SolarUnitDetailPage() {
   const { id } = useParams();
@@ -24,9 +24,18 @@ export default function SolarUnitDetailPage() {
     navigate(`/admin/solar-units/${solarUnit._id}/edit`);
   };
 
-  const handleDelete = () => {
-    // TODO: Implement delete with confirmation
-    console.log("Delete solar unit:", solarUnit._id);
+  const [deleteSolarUnit, { isLoading: isDeleting }] = useDeleteSolarUnitMutation();
+
+  const handleDelete = async () => {
+    if (window.confirm("Are you sure you want to delete this solar unit? This action cannot be undone.")) {
+      try {
+        await deleteSolarUnit(solarUnit._id).unwrap();
+        navigate("/admin/solar-units");
+      } catch (error) {
+        console.error("Failed to delete solar unit:", error);
+        alert("Failed to delete solar unit. Please try again.");
+      }
+    }
   };
 
   return (
@@ -157,7 +166,7 @@ export default function SolarUnitDetailPage() {
                 onClick={handleDelete}
                 className="w-full text-red-600 hover:text-red-700"
               >
-                Delete Unit
+                {isDeleting ? "Deleting..." : "Delete Unit"}
               </Button>
             </div>
           </Card>

@@ -44,6 +44,12 @@ export const api = createApi({
         body: data,
       }),
     }),
+    deleteSolarUnit: build.mutation({
+      query: (id) => ({
+        url: `/solar-units/${id}`,
+        method: "DELETE",
+      }),
+    }),
     getAllUsers: build.query({
       query: () => `/users`,
     }),
@@ -105,6 +111,7 @@ export const {
   useGetSolarUnitByIdQuery,
   useCreateSolarUnitMutation,
   useEditSolarUnitMutation,
+  useDeleteSolarUnitMutation,
   useGetWeatherQuery,
   useGetCapacityFactorQuery,
   useGetInvoicesQuery,
