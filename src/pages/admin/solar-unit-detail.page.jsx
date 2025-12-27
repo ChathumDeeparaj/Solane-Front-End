@@ -24,7 +24,9 @@ export default function SolarUnitDetailPage() {
     navigate(`/admin/solar-units/${solarUnit._id}/edit`);
   };
 
-  // const [deleteSolarUnit, { isLoading: isDeleting }] = useDeleteSolarUnitMutation();\n  const isDeleting = false;
+  // const [deleteSolarUnit, { isLoading: isDeleting }] = useDeleteSolarUnitMutation();
+  const isDeleting = false;
+  const deleteSolarUnit = () => ({ unwrap: () => Promise.resolve() });
 
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this solar unit? This action cannot be undone.")) {
