@@ -1,4 +1,4 @@
-# Aelora Data API
+# Solane Front End
 
 This service handles high-frequency data ingestion and retrieval for the Aelora Solar Platform (e.g., real-time energy generation readings).
 
@@ -56,11 +56,16 @@ Based on the `seed.ts` script logic and available data:
 | **INFO** | Blue | Optimization opportunity or minor observation. | Dashboard Note |
 
 
-Backend Repo :- 
+Frontend Repo :- https://github.com/ChathumDeeparaj/Solane-Front-End
 
-Data Api Repo :-
+Backend Repo :-  https://github.com/ChathumDeeparaj/Solane-Back-End
+
+Data Api Repo :- https://github.com/ChathumDeeparaj/Solane-Data-Api
 
 - Deployed links of your
-    - Front-end
-    - Back-end
-    - Data-API
+    - Front-end:-https://fed-4-front-end-chathum.netlify.app
+
+    - Back-end:-https://fed-4-back-end-chathum.up.railway.app
+
+    - Data-API:-https://aelora-data-api-production.up.railway.app
+
