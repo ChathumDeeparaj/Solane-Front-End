@@ -57,4 +57,10 @@ Based on the `seed.ts` script logic and available data:
 
 
 Backend Repo :- 
+
 Data Api Repo :-
+
+- Deployed links of your
+    - Front-end
+    - Back-end
+    - Data-API
