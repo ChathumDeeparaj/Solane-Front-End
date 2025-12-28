@@ -18,7 +18,7 @@ export default function CheckoutForm({ invoiceId }) {
 
         // Note: We use the existing API base URL env var or fallback
         // The user's snippet used direct fetch. I will match that but ensure URL is correct.
-        const baseUrl = "http://localhost:8000"; // Or import.meta.env.VITE_API_BASE_URL if available
+        const baseUrl = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace('/api', '') : "http://localhost:8000";
 
         const response = await fetch(
             `${baseUrl}/api/payments/create-checkout-session`,
