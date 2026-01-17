@@ -8,18 +8,17 @@ import Footer from "@/components/Footer/footer";
 
 const HomePage = () => {
   return (
-    <>
+    <div className="bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900">
       <HeroSection />
-      <main className="space-y-6 px-2 sm:px-6 lg:px-12">
+      <main>
         {/* <SolarEnergyProduction /> */}
         <HomepageBody1 />
-        <br />
         <HomepageBody2 />
         <HomepageBody3 />
         <HomepageBody4 />
         <Footer />
       </main>
-    </>
+    </div>
   );
 };
 

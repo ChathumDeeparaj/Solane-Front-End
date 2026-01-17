@@ -1,24 +1,22 @@
 
-import SolaneLogo from "./Solane-Logo.png";
+import { Sun } from "lucide-react";
 
 const Footer = () => {
     return (
-        <section className="py-10 bg-gray-50 sm:pt-16 lg:pt-24">
+        <section className="py-10 sm:pt-16 lg:pt-24 border-t border-t-cyan-500/30 px-6 md:px-12">
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
                 <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
                     <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
                         <div className="flex items-center gap-3">
-                            <img
-                                className="w-auto h-20"
-                                src={SolaneLogo}
-                                alt="Solane Logo"
-                            />
-                            <h2 className="text-2xl font-bold text-gray-800">
+                            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                                <Sun className="w-6 h-6 text-white" />
+                            </div>
+                            <h2 className="text-2xl font-bold text-white">
                                 Solane
                             </h2>
                         </div>
 
-                        <p className="text-base leading-relaxed text-gray-600 mt-7">
+                        <p className="text-base leading-relaxed text-gray-400 mt-7">
                             Empowering your sustainable future with real time solar tracking and smart energy insights. Take control of your home&apos;s power.
                         </p>
 
@@ -27,7 +25,7 @@ const Footer = () => {
                                 <a
                                     href="#"
                                     title=""
-                                    className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-brand-dark/90 focus:bg-brand-dark/90"
+                                    className="flex items-center justify-center text-white transition-all duration-200 bg-slate-800 rounded-full w-7 h-7 hover:bg-cyan-500 focus:bg-cyan-500"
                                 >
                                     <svg
                                         className="w-4 h-4"
@@ -79,7 +77,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">
+                        <p className="text-sm font-semibold tracking-widest text-gray-500 uppercase">
                             Company
                         </p>
 
@@ -88,7 +86,7 @@ const Footer = () => {
                                 <a
                                     href="#"
                                     title=""
-                                    className="flex text-base text-black transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
+                                    className="flex text-base text-gray-300 transition-all duration-200 hover:text-cyan-400 focus:text-cyan-400"
                                 >
                                     {" "}
                                     About{" "}
@@ -99,7 +97,7 @@ const Footer = () => {
                                 <a
                                     href="#"
                                     title=""
-                                    className="flex text-base text-black transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
+                                    className="flex text-base text-gray-300 transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
                                 >
                                     {" "}
                                     Features{" "}
@@ -110,7 +108,7 @@ const Footer = () => {
                                 <a
                                     href="#"
                                     title=""
-                                    className="flex text-base text-black transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
+                                    className="flex text-base text-gray-300 transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
                                 >
                                     {" "}
                                     Works{" "}
@@ -121,7 +119,7 @@ const Footer = () => {
                                 <a
                                     href="#"
                                     title=""
-                                    className="flex text-base text-black transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
+                                    className="flex text-base text-gray-300 transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
                                 >
                                     {" "}
                                     Career{" "}
@@ -131,7 +129,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">
+                        <p className="text-sm font-semibold tracking-widest text-gray-500 uppercase">
                             Help
                         </p>
 
@@ -140,7 +138,7 @@ const Footer = () => {
                                 <a
                                     href="#"
                                     title=""
-                                    className="flex text-base text-black transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
+                                    className="flex text-base text-gray-300 transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
                                 >
                                     {" "}
                                     Customer Support{" "}
@@ -151,7 +149,7 @@ const Footer = () => {
                                 <a
                                     href="#"
                                     title=""
-                                    className="flex text-base text-black transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
+                                    className="flex text-base text-gray-300 transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
                                 >
                                     {" "}
                                     Delivery Details{" "}
@@ -162,7 +160,7 @@ const Footer = () => {
                                 <a
                                     href="#"
                                     title=""
-                                    className="flex text-base text-black transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
+                                    className="flex text-base text-gray-300 transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
                                 >
                                     {" "}
                                     Terms & Conditions{" "}
@@ -173,7 +171,7 @@ const Footer = () => {
                                 <a
                                     href="#"
                                     title=""
-                                    className="flex text-base text-black transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
+                                    className="flex text-base text-gray-300 transition-all duration-200 hover:text-brand-dark focus:text-brand-dark"
                                 >
                                     {" "}
                                     Privacy Policy{" "}
@@ -183,7 +181,7 @@ const Footer = () => {
                     </div>
 
                     <div className="col-span-2 md:col-span-1 lg:col-span-2 lg:pl-8">
-                        <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">
+                        <p className="text-sm font-semibold tracking-widest text-gray-500 uppercase">
                             Subscribe to newsletter
                         </p>
 
@@ -197,13 +195,13 @@ const Footer = () => {
                                     name="email"
                                     id="email"
                                     placeholder="Enter your email"
-                                    className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-brand-dark caret-brand-dark"
+                                    className="block w-full p-4 text-white placeholder-gray-500 transition-all duration-200 bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-md focus:outline-none focus:border-cyan-500 caret-cyan-400"
                                 />
                             </div>
 
                             <button
                                 type="submit"
-                                className="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 bg-brand-dark rounded-md hover:bg-brand-dark/90 focus:bg-brand-dark/90"
+                                className="inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 bg-gradient-to-r from-cyan-500 to-teal-500 rounded-md hover:from-cyan-600 hover:to-teal-600 focus:from-cyan-600 focus:to-teal-600 shadow-lg shadow-cyan-500/20"
                             >
                                 Get In Touch
                             </button>
@@ -211,9 +209,9 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <hr className="mt-16 mb-10 border-gray-200" />
+                <hr className="mt-16 mb-10 border-purple-900/50" />
 
-                <p className="text-sm text-center text-gray-600">
+                <p className="text-sm text-center text-gray-500">
                     © Copyright 2025, All Rights Reserved by Solane
                 </p>
             </div>
