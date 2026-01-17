@@ -7,7 +7,7 @@ export default function DashboardLayout() {
     <>
       <SidebarProvider>
         <AppSidebar />
-        <main className="p-4 w-full bg-slate-200">
+        <main className="p-4 w-full min-h-screen bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900">
           <SidebarTrigger className="block" />
           <Outlet />
         </main>

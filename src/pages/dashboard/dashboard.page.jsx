@@ -13,11 +13,11 @@ const DashboardPage = () => {
   const { data: solarUnit, isLoading: isLoadingSolarUnit, isError: isErrorSolarUnit, error: errorSolarUnit } = useGetSolarUnitForUserQuery();
 
   if (isLoadingSolarUnit) {
-    return <div>Loading...</div>;
+    return <div className="text-white">Loading...</div>;
   }
 
   if (isErrorSolarUnit) {
-    return <div>Error: {errorSolarUnit.message}</div>;
+    return <div className="text-white">Error: {errorSolarUnit.message}</div>;
   }
 
   console.log(solarUnit);
@@ -28,7 +28,7 @@ const DashboardPage = () => {
 
   return (
     <main className="mt-4">
-      <h1 className="text-4xl font-bold text-foreground">{user?.firstName}'s House</h1>
+      <h1 className="text-4xl text-white font-bold">{user?.firstName}'s House</h1>
       <p className="text-gray-600 mt-2">
         Welcome back to your Solar Energy Production Dashboard
       </p>

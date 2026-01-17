@@ -25,13 +25,13 @@ export default function AdminInvoicesPage() {
         filter === "All" ? undefined : filter
     );
 
-    if (isLoading) return <div className="p-8">Loading invoices...</div>;
-    if (error) return <div className="p-8 text-red-500">Error loading invoices</div>;
+    if (isLoading) return <div className="text-white p-8">Loading invoices...</div>;
+    if (error) return <div className="p-8 text-white-500">Error loading invoices</div>;
 
     return (
         <div className="p-8 space-y-6">
             <div className="flex justify-between items-center">
-                <h1 className="text-3xl font-bold">All Invoices</h1>
+                <h1 className="text-white text-3xl font-bold">All Invoices</h1>
                 <div className="space-x-2">
                     {["All", "PENDING", "PAID", "FAILED"].map((status) => (
                         <Button

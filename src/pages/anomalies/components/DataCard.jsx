@@ -34,14 +34,14 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
 
   if (isLoading) {
     return (
-      <Card className="rounded-md p-4">
-        <Skeleton className="h-6 w-64 mb-4" />
+      <Card className="rounded-xl p-4 bg-slate-800/60 backdrop-blur-sm border-slate-700">
+        <Skeleton className="h-6 w-64 mb-4 bg-slate-700" />
         <div className="grid grid-cols-7 gap-4 mt-4">
           {Array.from({ length: 7 }).map((_, index) => (
             <div key={index} className="col-span-1 px-2 py-1">
               <div className="flex flex-col items-center justify-center space-y-2">
-                <Skeleton className="h-3 w-12" />
-                <Skeleton className="h-6 w-16" />
+                <Skeleton className="h-3 w-12 bg-slate-700" />
+                <Skeleton className="h-6 w-16 bg-slate-700" />
               </div>
             </div>
           ))}
@@ -91,23 +91,23 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
   console.log('Data with Anomalies:', dataWithAnomalies);
 
   return (
-    <Card className="rounded-md p-6">
+    <Card className="rounded-xl p-6 bg-slate-800/60 backdrop-blur-sm border-slate-700">
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h2 className="text-2xl font-bold text-foreground mb-2">
+          <h2 className="text-2xl font-bold text-white mb-2">
             {title}
           </h2>
-          <p className="text-gray-600">Daily energy output for the past 7 days</p>
+          <p className="text-gray-400">Daily energy output for the past 7 days</p>
         </div>
 
         {/* Detection Method Selector - for teaching demonstrations */}
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-1">
-            <label className="text-xs text-gray-500 font-medium">Detection Method:</label>
+            <label className="text-xs text-gray-400 font-medium">Detection Method:</label>
             <select
               value={detectionMethod}
               onChange={(e) => setDetectionMethod(e.target.value)}
-              className="px-3 py-1 border border-gray-300 rounded-md text-sm bg-white hover:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-3 py-1 border border-slate-600 rounded-md text-sm bg-slate-700 text-white hover:border-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
             >
               <option value="windowAverage">Window Average (7-day)</option>
               <option value="absolute">Absolute Threshold</option>
@@ -117,7 +117,7 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
           {/* Threshold Controls for Teaching */}
           {detectionMethod === 'windowAverage' && (
             <div className="flex flex-col gap-1">
-              <label className="text-xs text-gray-500 font-medium">
+              <label className="text-xs text-gray-400 font-medium">
                 Threshold: {thresholdPercent}% below average
               </label>
               <input
@@ -126,7 +126,7 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
                 max="60"
                 value={thresholdPercent}
                 onChange={(e) => setThresholdPercent(Number(e.target.value))}
-                className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                className="w-full h-1 bg-slate-600 rounded-lg appearance-none cursor-pointer accent-purple-500"
               />
             </div>
           )}
@@ -134,7 +134,7 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
           {/* Absolute Minimum Threshold Control */}
           {detectionMethod === 'absolute' && (
             <div className="flex flex-col gap-1">
-              <label className="text-xs text-gray-500 font-medium">
+              <label className="text-xs text-gray-400 font-medium">
                 Minimum: {absoluteMin} kWh
               </label>
               <input
@@ -143,7 +143,7 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
                 max="15"
                 value={absoluteMin}
                 onChange={(e) => setAbsoluteMin(Number(e.target.value))}
-                className="w-full h-1 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                className="w-full h-1 bg-slate-600 rounded-lg appearance-none cursor-pointer accent-purple-500"
               />
             </div>
           )}
@@ -151,19 +151,19 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
       </div>
 
       {/* Anomaly Statistics - shows detection results */}
-      <div className="mb-4 p-3 bg-brand-dark/5 rounded-lg border border-brand-dark/10">
+      <div className="mb-4 p-3 bg-slate-700/50 rounded-lg border border-slate-600">
         <div className="flex items-center justify-between gap-4">
           <div className="flex-1">
-            <p className="text-sm text-brand-dark">
-              <span className="font-semibold">Window Average:</span> {stats.windowAverage} kWh
+            <p className="text-sm text-gray-300">
+              <span className="font-semibold text-white">Window Average:</span> {(stats.windowAverage / 1000).toFixed(1)} kWh
               {' | '}
-              <span className="font-semibold">Range:</span> {stats.minEnergy} - {stats.maxEnergy} kWh
+              <span className="font-semibold text-white">Range:</span> {(stats.minEnergy / 1000).toFixed(1)} - {(stats.maxEnergy / 1000).toFixed(1)} kWh
             </p>
           </div>
           <div className="flex-1">
-            <p className="text-sm text-brand-dark">
-              <span className="font-semibold">Anomalies:</span>{' '}
-              <span className={stats.anomalyCount > 0 ? 'text-red-600 font-bold' : 'text-green-600'}>
+            <p className="text-sm text-gray-300">
+              <span className="font-semibold text-white">Anomalies:</span>{' '}
+              <span className={stats.anomalyCount > 0 ? 'text-red-400 font-bold' : 'text-green-400'}>
                 {stats.anomalyCount}
               </span>
               {' '}out of {stats.totalRecords} days ({stats.anomalyRate})
