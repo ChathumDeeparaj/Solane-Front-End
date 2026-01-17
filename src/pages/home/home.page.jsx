@@ -8,16 +8,18 @@ import Footer from "@/components/Footer/footer";
 
 const HomePage = () => {
   return (
-    <main className="space-y-6 px-2 sm:px-6 lg:px-12">
+    <>
       <HeroSection />
-      {/* <SolarEnergyProduction /> */}
-      <HomepageBody1 />
-      <br />
-      <HomepageBody2 />
-      <HomepageBody3 />
-      <HomepageBody4 />
-      <Footer />
-    </main>
+      <main className="space-y-6 px-2 sm:px-6 lg:px-12">
+        {/* <SolarEnergyProduction /> */}
+        <HomepageBody1 />
+        <br />
+        <HomepageBody2 />
+        <HomepageBody3 />
+        <HomepageBody4 />
+        <Footer />
+      </main>
+    </>
   );
 };
 
