@@ -4,7 +4,7 @@ import { Thermometer, Wind, Cloud, AlertCircle } from 'lucide-react';
 import { useGetWeatherQuery } from '@/lib/redux/query';
 
 // Weather Conditions Component with Real Data Integration
-function WeatherConditionsCard({ latitude = 6.9271, longitude = 79.8612 }) {
+function WeatherConditionsCard({ latitude = 6.9355, longitude = 79.8487 }) {
   // Fetch weather data using RTK Query
   const { data: weatherData, isLoading, isError, error } = useGetWeatherQuery(
     { latitude, longitude },
