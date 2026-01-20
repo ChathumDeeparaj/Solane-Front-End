@@ -4,8 +4,7 @@ import { Thermometer, Wind, Cloud, AlertCircle } from 'lucide-react';
 import { useGetWeatherQuery } from '@/lib/redux/query';
 
 // Weather Conditions Component with Real Data Integration
-function WeatherConditionsCard({ latitude = 6.9271, longitude = 79.8612
- }) {
+function WeatherConditionsCard({ latitude = 6.9271, longitude = 79.8612 }) {
   // Fetch weather data using RTK Query
   const { data: weatherData, isLoading, isError, error } = useGetWeatherQuery(
     { latitude, longitude },
@@ -41,14 +40,14 @@ function WeatherConditionsCard({ latitude = 6.9271, longitude = 79.8612
   return (
     <Card className="bg-gradient-to-br from-blue-800/40 to-blue-900/40 backdrop-blur-md border-blue-700/50 text-white overflow-hidden relative">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4xKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-30"></div>
-      
+
       <CardHeader className="relative z-10">
         <div className="flex justify-between items-center">
           <CardTitle className="text-2xl font-semibold">Weather Conditions</CardTitle>
           {isLoading && <span className="text-xs text-blue-300 animate-pulse">Fetching...</span>}
         </div>
       </CardHeader>
-      
+
       <CardContent className="relative z-10">
         {isError && (
           <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg flex gap-2 items-center">
@@ -72,7 +71,7 @@ function WeatherConditionsCard({ latitude = 6.9271, longitude = 79.8612
               </div>
             </div>
           </div>
-          
+
           {/* Wind Speed */}
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
             <div className="flex items-center gap-4">
