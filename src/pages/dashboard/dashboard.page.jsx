@@ -22,7 +22,7 @@ const DashboardPage = () => {
 
   console.log(solarUnit);
 
-  // Get coordinates from solar unit or use default (San Francisco)
+  // Get coordinates from solar unit or use default (colombo)
   const latitude = solarUnit?.location?.coordinates?.[1] || 6.9355;
   const longitude = solarUnit?.location?.coordinates?.[0] || 79.8531;
 
