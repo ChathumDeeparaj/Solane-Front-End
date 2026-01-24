@@ -1,4 +1,4 @@
-import { ChartLine, LayoutDashboard, TriangleAlert, FileText } from "lucide-react";
+import { ChartLine, LayoutDashboard, TriangleAlert, FileText, Sun } from "lucide-react";
 import { Link } from "react-router";
 import {
   Sidebar,
@@ -70,14 +70,8 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupLabel className="h-auto py-6 px-4">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500 to-cyan-500 p-0.5 flex justify-center items-center overflow-hidden shrink-0">
-                <div className="w-full h-full rounded-[10px] bg-slate-900 flex items-center justify-center overflow-hidden">
-                  <img
-                    src={SolaneLogo}
-                    alt="Solane Logo"
-                    className="w-full h-full object-cover scale-[3]"
-                  />
-                </div>
+              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-cyan-400 to-teal-500 flex justify-center items-center overflow-hidden shrink-0 shadow-lg shadow-cyan-500/30">
+                <Sun className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
                 Solane
@@ -93,6 +87,6 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-    </Sidebar>
+    </Sidebar >
   );
 }
