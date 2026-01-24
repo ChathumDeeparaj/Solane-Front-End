@@ -9,7 +9,7 @@ export const uiSlice = createSlice({
   initialState,
   reducers: {
     switchDashboardTab: (state, action) => {
-      console.log(action);
+
       state.selectedDashboardTab = action.payload;
     },
   },

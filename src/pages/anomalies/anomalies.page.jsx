@@ -8,7 +8,7 @@ import EnergyProductionCards from "./components/EnergyProductionCards";
 const AnomaliesPage = () => {
   const { user, isLoaded } = useUser();
 
-  const { data: solarUnit, isLoading: isLoadingSolarUnit, isError: isErrorSolarUnit, error: errorSolarUnit } = useGetSolarUnitForUserQuery();
+  const { data: solarUnits, isLoading: isLoadingSolarUnit, isError: isErrorSolarUnit, error: errorSolarUnit } = useGetSolarUnitForUserQuery();
 
   if (isLoadingSolarUnit) {
     return <div className="text-white">Loading...</div>;
@@ -18,8 +18,12 @@ const AnomaliesPage = () => {
     return <div className="text-red-400">Error: {errorSolarUnit.message}</div>;
   }
 
-  console.log(solarUnit);
+  // Handle array response - select first unit (future: add unit selector UI)
+  const solarUnit = Array.isArray(solarUnits) ? solarUnits[0] : solarUnits;
 
+  if (!solarUnit) {
+    return <div className="text-white">No solar unit found for your account.</div>;
+  }
   return (
     <main className="mt-4">
       <h1 className="text-4xl font-bold text-white">{user?.firstName}'s House</h1>

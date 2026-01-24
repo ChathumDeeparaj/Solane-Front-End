@@ -19,7 +19,7 @@ export function SettingsTab() {
 
   const handleSave = () => {
     // TODO: Implement API call to save settings
-    console.log("Settings saved:", settings);
+
     alert("Settings saved successfully!");
   };
 

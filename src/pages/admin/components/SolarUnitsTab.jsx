@@ -21,7 +21,7 @@ export function SolarUnitsTab() {
     return <div>Error: {errorSolarUnits.message}</div>;
   }
 
-  console.log(solarUnits);
+
 
 
   const filteredUnits = searchTerm !== "" ? solarUnits.filter(

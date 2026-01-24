@@ -10,7 +10,7 @@ import CapacityFactorChart from "./components/CapacityFactorChart";
 const DashboardPage = () => {
   const { user, isLoaded } = useUser();
 
-  const { data: solarUnit, isLoading: isLoadingSolarUnit, isError: isErrorSolarUnit, error: errorSolarUnit } = useGetSolarUnitForUserQuery();
+  const { data: solarUnits, isLoading: isLoadingSolarUnit, isError: isErrorSolarUnit, error: errorSolarUnit } = useGetSolarUnitForUserQuery();
 
   if (isLoadingSolarUnit) {
     return <div className="text-white">Loading...</div>;
@@ -20,7 +20,12 @@ const DashboardPage = () => {
     return <div className="text-white">Error: {errorSolarUnit.message}</div>;
   }
 
-  console.log(solarUnit);
+  // Handle array response - select first unit (future: add unit selector UI)
+  const solarUnit = Array.isArray(solarUnits) ? solarUnits[0] : solarUnits;
+
+  if (!solarUnit) {
+    return <div className="text-white">No solar unit found for your account.</div>;
+  }
 
   // Get coordinates from solar unit or use default (colombo)
   const latitude = solarUnit?.location?.coordinates?.[1] || 6.9355;

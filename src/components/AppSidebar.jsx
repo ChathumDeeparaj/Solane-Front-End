@@ -19,22 +19,22 @@ const items = [
   {
     title: "Dashboard",
     url: "/dashboard",
-    icon: <LayoutDashboard className="w-8 h-8" size={32} />,
+    icon: <LayoutDashboard className="w-5 h-5" />,
   },
   {
     title: "Anomalies",
     url: "/dashboard/anomalies",
-    icon: <TriangleAlert className="w-8 h-8" size={32} />,
+    icon: <TriangleAlert className="w-5 h-5" />,
   },
   {
     title: "Analytics",
     url: "/dashboard/analytics",
-    icon: <ChartLine className="w-8 h-8" size={32} />,
+    icon: <ChartLine className="w-5 h-5" />,
   },
   {
     title: "Invoices",
     url: "/dashboard/invoices",
-    icon: <FileText className="w-8 h-8" size={32} />,
+    icon: <FileText className="w-5 h-5" />,
   },
 ];
 
@@ -47,13 +47,16 @@ const SideBarTab = ({ item }) => {
       <SidebarMenuButton
         asChild
         isActive={isActive}
-        className="hover:bg-brand-light/20 hover:text-brand-dark data-[active=true]:bg-brand-dark data-[active=true]:text-white"
+        className={cn(
+          "rounded-xl transition-all duration-200 py-3 px-4",
+          "hover:bg-purple-500/20 hover:text-white",
+          "data-[active=true]:bg-gradient-to-r data-[active=true]:from-purple-600 data-[active=true]:to-cyan-500",
+          "data-[active=true]:text-white data-[active=true]:shadow-lg data-[active=true]:shadow-purple-500/25"
+        )}
       >
-        <Link
-          to={item.url}
-        >
+        <Link to={item.url} className="flex items-center gap-3">
           {item.icon}
-          <span>{item.title}</span>
+          <span className="font-medium">{item.title}</span>
         </Link>
       </SidebarMenuButton>
     </SidebarMenuItem>
@@ -62,27 +65,27 @@ const SideBarTab = ({ item }) => {
 
 export function AppSidebar() {
   return (
-    <Sidebar>
-      <SidebarContent>
+    <Sidebar className="border-r-0">
+      <SidebarContent className="bg-gradient-to-b from-slate-900 via-purple-950/50 to-slate-900">
         <SidebarGroup>
-          <SidebarGroupLabel className="h-auto py-4">
+          <SidebarGroupLabel className="h-auto py-6 px-4">
             <Link to="/" className="flex items-center gap-3">
-              <div
-                className={
-                  "w-10 h-10 rounded-full  flex justify-center items-center overflow-hidden shrink-0"
-                }
-              >
-                <img
-                  src={SolaneLogo}
-                  alt="Solane Logo"
-                  className="w-full h-full object-cover scale-300"
-                />
+              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500 to-cyan-500 p-0.5 flex justify-center items-center overflow-hidden shrink-0">
+                <div className="w-full h-full rounded-[10px] bg-slate-900 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={SolaneLogo}
+                    alt="Solane Logo"
+                    className="w-full h-full object-cover scale-[3]"
+                  />
+                </div>
               </div>
-              <span className="text-3xl font-bold text-foreground">Solane</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                Solane
+              </span>
             </Link>
           </SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu className="mt-4 text">
+          <SidebarGroupContent className="px-2">
+            <SidebarMenu className="mt-4 space-y-2">
               {items.map((item) => (
                 <SideBarTab key={item.url} item={item} />
               ))}

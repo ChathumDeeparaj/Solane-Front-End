@@ -84,11 +84,8 @@ const DataCard = ({ title = "Solar Energy Production", solarUnitId }) => {
     }
   });
 
-  // TEACHING NOTE: Log anomaly statistics to console for students to see
+  // Anomaly statistics available in stats object for display
   const stats = getAnomalyStats(dataWithAnomalies);
-  console.log('Anomaly Detection Stats:', stats);
-  console.log('Detection Method:', detectionMethod);
-  console.log('Data with Anomalies:', dataWithAnomalies);
 
   return (
     <Card className="rounded-md p-6">

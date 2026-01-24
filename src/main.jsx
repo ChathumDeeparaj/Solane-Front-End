@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 
 import HomePage from "./pages/home/home.page.jsx";
 import DashboardPage from "./pages/dashboard/dashboard.page.jsx";
+import AnalyticsPage from "./pages/dashboard/analytics.page.jsx";
 
 import RootLayout from "./layouts/root.layout.jsx";
 import MainLayout from "./layouts/main.layout.jsx";
@@ -53,6 +54,7 @@ createRoot(document.getElementById("root")).render(
                 <Route element={<DashboardLayout />}>
                   <Route path="/dashboard" element={<DashboardPage />} />
                   <Route path="/dashboard/anomalies" element={<AnomaliesPage />} />
+                  <Route path="/dashboard/analytics" element={<AnalyticsPage />} />
                   <Route path="/dashboard/invoices" element={<InvoicesPage />} />
                   <Route path="/dashboard/invoices/:id/pay" element={<PaymentPage />} />
                   <Route path="/dashboard/invoices/complete" element={<PaymentCompletePage />} />

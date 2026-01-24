@@ -10,8 +10,8 @@ export default function InvoicesPage() {
     const { data: invoices, isLoading, error } = useGetInvoicesQuery();
     const [filter, setFilter] = useState("All");
 
-    if (isLoading) return <div className="p-8">Loading invoices...</div>;
-    if (error) return <div className="p-8 text-red-500">Error loading invoices</div>;
+    if (isLoading) return <div className="p-8 text-white">Loading invoices...</div>;
+    if (error) return <div className="p-8 text-red-400">Error loading invoices</div>;
 
     const filteredInvoices = invoices?.filter((invoice) => {
         if (filter === "All") return true;
@@ -21,7 +21,7 @@ export default function InvoicesPage() {
     return (
         <div className="p-8 space-y-6">
             <div className="flex justify-between items-center">
-                <h1 className="text-3xl font-bold">Invoices</h1>
+                <h1 className="text-3xl font-bold text-white">Invoices</h1>
                 <div className="space-x-2">
                     {["All", "Pending", "Paid"].map((status) => (
                         <Button
@@ -37,12 +37,12 @@ export default function InvoicesPage() {
 
             <div className="grid gap-4">
                 {filteredInvoices?.length === 0 ? (
-                    <p>No invoices found.</p>
+                    <p className="text-gray-400">No invoices found.</p>
                 ) : (
                     filteredInvoices?.map((invoice) => (
-                        <Card key={invoice._id}>
+                        <Card key={invoice._id} className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-purple-500/20 rounded-xl">
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                <CardTitle className="text-sm font-medium">
+                                <CardTitle className="text-sm font-medium text-gray-300">
                                     {format(new Date(invoice.billingPeriodStart), "MMM d, yyyy")} -{" "}
                                     {format(new Date(invoice.billingPeriodEnd), "MMM d, yyyy")}
                                 </CardTitle>
@@ -65,10 +65,10 @@ export default function InvoicesPage() {
                             <CardContent>
                                 <div className="flex justify-between items-center mt-2">
                                     <div>
-                                        <div className="text-2xl font-bold">
+                                        <div className="text-2xl font-bold text-white">
                                             {invoice.totalEnergyGenerated.toFixed(2)} kWh
                                         </div>
-                                        <p className="text-xs text-muted-foreground">
+                                        <p className="text-xs text-gray-400">
                                             Unit: {invoice.solarUnitId?.serialNumber || "N/A"}
                                         </p>
                                     </div>
